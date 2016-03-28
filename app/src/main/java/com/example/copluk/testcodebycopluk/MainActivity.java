@@ -26,25 +26,28 @@ public class MainActivity extends AppCompatActivity {
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testButton(mainText);
+
+                testButton test1 = new testButton();
+
+                checkButton = test1.testButton(mainText , checkButton);
             }
         });
 
     }
 
-    private void testButton(TextView mainText){
-
-        if (checkButton == 0)
-        {
-            mainMessage = "testAPP2";
-            mainText.setText(mainMessage);
-            checkButton = 1;
-        }else{
-            mainMessage = "testAPP1";
-            mainText.setText(mainMessage);
-            checkButton = 0;
-        }
-
-    }
+//    private void testButton(TextView mainText){
+//
+//        if (checkButton == 0)
+//        {
+//            mainMessage = "testAPP2";
+//            mainText.setText(mainMessage);
+//            checkButton = 1;
+//        }else{
+//            mainMessage = "testAPP1";
+//            mainText.setText(mainMessage);
+//            checkButton = 0;
+//        }
+//
+//    }
 
 }
