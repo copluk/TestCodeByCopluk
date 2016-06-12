@@ -1,10 +1,12 @@
 package testClass;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.copluk.testcodebycopluk.R;
@@ -55,6 +57,7 @@ public class myAdapter extends BaseAdapter {
             convertView = _lInflater.inflate(R.layout.list_view_template, parent, false);
             holder = new ViewHolder();
             holder.textView = (TextView) convertView.findViewById(R.id.textView);
+            holder.lL = (LinearLayout) convertView.findViewById(R.id.linearLayout);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -63,11 +66,16 @@ public class myAdapter extends BaseAdapter {
         String text = (String) getItem(position);
         holder.textView.setText(text);
 
+        if( position == 2){
+            holder.lL.setBackgroundColor(Color.RED);
+        }
+
         return convertView;
     }
 
     private static class ViewHolder {
         TextView textView;
+        LinearLayout lL;
     }
 
 
